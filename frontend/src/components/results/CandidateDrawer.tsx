@@ -89,10 +89,7 @@ export default function CandidateDrawer({ candidate, onClose }: CandidateDrawerP
                       return
                     }
 
-                    window.open(
-                      `http://127.0.0.1:8000${candidate.resume_url}`,
-                      "_blank"
-                    )
+                    window.open(candidate.resume_url, "_blank")
                   }}
                   className="btn-secondary flex-1 text-xs"
                 >

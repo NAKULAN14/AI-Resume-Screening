@@ -5,7 +5,7 @@ import axios from 'axios'
  * Backend exposes no "/api" prefix — routers are mounted at "/upload" and "/ranking"
  * directly on the root app (see backend/main.py). Configure via VITE_API_BASE_URL.
  */
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000'
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || ""
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

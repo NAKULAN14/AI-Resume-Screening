@@ -1,0 +1,314 @@
+# 🚀 AI Resume Screening System (ResumeIQ)
+
+An AI-powered Applicant Tracking System (ATS) that automatically parses, analyzes, and ranks resumes against a Job Description using Natural Language Processing (NLP) and Sentence Transformers.
+
+Built with **FastAPI**, **React (Vite)**, **SQLite**, and **Sentence Transformers**, ResumeIQ helps recruiters quickly identify the most suitable candidates by evaluating semantic similarity, skills, education, experience, and eligibility.
+
+---
+
+## ✨ Features
+
+- 📄 Upload a Job Description (PDF)
+- 📑 Upload multiple Resume PDFs
+- 🤖 AI-powered semantic matching using Sentence Transformers
+- 🎯 Resume ranking based on multiple evaluation criteria
+- 🧠 Automatic extraction of:
+  - Candidate Name
+  - Email
+  - Phone Number
+  - Skills
+  - Education
+  - Experience
+  - Graduation Year
+- 📊 Analytics Dashboard
+- 👥 Candidate Management
+- 📥 Resume Download Support
+- 💾 SQLite Database Integration
+- 📈 REST API with Swagger Documentation
+
+---
+
+# 🖥️ Tech Stack
+
+## Backend
+
+- FastAPI
+- Python
+- SQLAlchemy
+- SQLite
+- PyMuPDF (fitz)
+- spaCy
+- Sentence Transformers
+- Scikit-Learn
+
+## Frontend
+
+- React
+- Vite
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Axios
+- React Hot Toast
+
+---
+
+# 🧠 AI Ranking Algorithm
+
+The ranking engine evaluates candidates using multiple parameters.
+
+| Parameter | Weight |
+|-----------|---------|
+| Semantic Similarity | 30% |
+| Skill Match | 35% |
+| Education Match | 5% |
+| Experience Match | 15% |
+| Eligibility Match | 15% |
+
+The final score is calculated as:
+
+```
+Final Score =
+0.30 × Similarity +
+0.35 × Skill Score +
+0.05 × Education Score +
+0.15 × Experience Score +
+0.15 × Eligibility Score
+```
+
+---
+
+# 📂 Project Structure
+
+```
+AI-Resume-Screener
+│
+├── backend
+│   ├── database
+│   ├── routes
+│   ├── services
+│   ├── uploads
+│   ├── data
+│   ├── requirements.txt
+│   ├── main.py
+│   └── ...
+│
+├── frontend
+│   ├── src
+│   ├── public
+│   ├── package.json
+│   └── ...
+│
+├── dataset
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/<your-username>/AI-Resume-Screener.git
+
+cd AI-Resume-Screener
+```
+
+---
+
+## Backend Setup
+
+```bash
+cd backend
+
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+Run the backend
+
+```bash
+uvicorn main:app --reload
+```
+
+Backend runs at
+
+```
+http://127.0.0.1:8000
+```
+
+Swagger Documentation
+
+```
+http://127.0.0.1:8000/docs
+```
+
+---
+
+## Frontend Setup
+
+```bash
+cd frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs at
+
+```
+http://localhost:5173
+```
+
+---
+
+# 📖 API Endpoints
+
+## Upload Resume
+
+```
+POST /upload/upload
+```
+
+Uploads and extracts text from a resume PDF.
+
+---
+
+## Rank Candidates
+
+```
+POST /ranking/rank
+```
+
+Inputs
+
+- Job Description PDF
+- Multiple Resume PDFs
+
+Returns
+
+- Candidate Rankings
+- AI Scores
+- Extracted Information
+
+---
+
+## Get Candidates
+
+```
+GET /candidates
+```
+
+Returns all stored candidates.
+
+---
+
+## Get Candidate
+
+```
+GET /candidates/{id}
+```
+
+Returns a single candidate.
+
+---
+
+## Delete Candidate
+
+```
+DELETE /candidates/{id}
+```
+
+Deletes a candidate.
+
+---
+
+## Analytics
+
+```
+GET /analytics
+```
+
+Returns
+
+- Average Score
+- Skill Distribution
+- Education Distribution
+- Score Distribution
+- Total Candidates
+
+---
+
+# 📊 Candidate Evaluation
+
+Each resume receives:
+
+- Semantic Similarity Score
+- Skill Match Score
+- Education Score
+- Experience Score
+- Eligibility Score
+- Final AI Score
+
+Candidates are automatically ranked based on the Final Score.
+
+---
+
+
+
+# 🚀 Deployment
+
+The application can be deployed using:
+
+- Render (Backend)
+- Vercel (Frontend)
+
+or as a single Render Web Service by serving the built React application through FastAPI.
+
+---
+
+# 📈 Future Improvements
+
+- PostgreSQL Integration
+- JWT Authentication
+- HR Login Dashboard
+- Email Notifications
+- Interview Scheduling
+- Resume OCR Support
+- DOCX Resume Parsing
+- Cloud Storage Integration
+- Docker Deployment
+- CI/CD Pipeline
+- Configurable Ranking Weights
+- Multi-Job Session History
+
+---
+
+# 👨‍💻 Author
+
+**Nakulan D**
+
+Computer Science Engineering (Cybersecurity)
+
+Manipal Academy of Higher Education
+
+GitHub:
+https://github.com/NAKULAN14
+LinkedIn:https://www.linkedin.com/in/nakulan-d-4486611b8/
+
+---
+
+# ⭐ If you found this project useful
+
+Please consider giving it a ⭐ on GitHub.

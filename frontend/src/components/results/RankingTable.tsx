@@ -160,10 +160,7 @@ export default function RankingTable({ candidates, onSelect, pageSize = 8 }: Ran
                           return
                         }
 
-                        window.open(
-                          `http://127.0.0.1:8000${c.resume_url}`,
-                          "_blank"
-                        )
+                        window.open(c.resume_url, "_blank")
                       }}
                       className="flex h-8 w-8 items-center justify-center rounded-lg text-ink-faint transition-colors hover:bg-white/[0.06] hover:text-ink"
                       aria-label="Download resume"
