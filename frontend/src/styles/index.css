@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-line-soft;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(108, 108, 244, 0.14), transparent 60%),
+      radial-gradient(900px 500px at -10% 20%, rgba(51, 212, 224, 0.10), transparent 55%),
+      #07080D;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(108, 108, 244, 0.35);
+  }
+  :focus-visible {
+    outline: 2px solid #6C6CF4;
+    outline-offset: 2px;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1D2233;
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2A3145;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply relative rounded-xl2 border border-line-soft bg-white/[0.03] backdrop-blur-xl shadow-glass;
+  }
+
+  .glass-panel-hover {
+    @apply glass-panel transition-all duration-300 hover:border-line-med hover:bg-white/[0.045];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-signal-gradient px-5 py-2.5 text-sm font-semibold text-base-950 shadow-glow transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-line-med bg-white/[0.03] px-5 py-2.5 text-sm font-medium text-ink transition-colors duration-200 hover:bg-white/[0.07] disabled:opacity-40 disabled:pointer-events-none;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm text-ink-dim transition-colors duration-200 hover:bg-white/[0.06] hover:text-ink;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-line-soft bg-white/[0.03] px-4 py-2.5 text-sm text-ink placeholder:text-ink-faint outline-none transition-colors focus:border-signal-indigo/60;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line-soft bg-white/[0.04] px-3 py-1 text-xs font-medium text-ink-dim;
+  }
+
+  .skeleton {
+    @apply relative overflow-hidden rounded-lg bg-white/[0.05];
+  }
+  .skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    background-size: 400px 100%;
+    animation: shimmer 1.6s infinite linear;
+  }
+
+  .section-eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.14em] text-ink-faint;
+  }
+}
